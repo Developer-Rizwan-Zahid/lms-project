@@ -23,6 +23,12 @@ app.use(cors({
 }))
 // create apis
 app.use("/api/v1/user", userRoute)
+app.get('/',(req,res)=>{
+    res.send({
+        activeStatus:true,
+        error:false,
+    })
+})
 app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 app.use(cors({
